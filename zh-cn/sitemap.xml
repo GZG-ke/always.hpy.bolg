@@ -20,7 +20,28 @@
                 href="https://gzg-ke.github.io/always.hpy.bolg/"
                 />
   </url><url>
-    <loc>https://gzg-ke.github.io/always.hpy.bolg/p/myfirstblog/</loc>
+    <loc>https://gzg-ke.github.io/always.hpy.bolg/categories/c%23/</loc>
+    <lastmod>2024-12-26T18:19:22+08:00</lastmod>
+  </url><url>
+    <loc>https://gzg-ke.github.io/always.hpy.bolg/categories/</loc>
+    <lastmod>2024-12-26T18:19:22+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gzg-ke.github.io/always.hpy.bolg/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://gzg-ke.github.io/always.hpy.bolg/ar/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://gzg-ke.github.io/always.hpy.bolg/categories/"
+                />
+  </url><url>
+    <loc>https://gzg-ke.github.io/always.hpy.bolg/p/csharplearning/</loc>
     <lastmod>2024-12-26T18:19:22+08:00</lastmod>
   </url><url>
     <loc>https://gzg-ke.github.io/always.hpy.bolg/post/</loc>
@@ -39,24 +60,6 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://gzg-ke.github.io/always.hpy.bolg/post/"
-                />
-  </url><url>
-    <loc>https://gzg-ke.github.io/always.hpy.bolg/categories/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gzg-ke.github.io/always.hpy.bolg/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://gzg-ke.github.io/always.hpy.bolg/ar/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://gzg-ke.github.io/always.hpy.bolg/categories/"
                 />
   </url><url>
     <loc>https://gzg-ke.github.io/always.hpy.bolg/p/test-chinese/</loc>
