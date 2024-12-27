@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://gzg-ke.github.io/always.hpy.bolg/post/'>
 
-<link rel="stylesheet" href="/always.hpy.bolg/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Posts">
+<link rel="stylesheet" href="/always.hpy.bolg/scss/style.min.da10c01e1d8b618195594efc58dabd810eef71ec1463db97e171d682eda240d0.css"><meta property='og:title' content="Posts">
 <meta property='og:description' content="要开心哟">
 <meta property='og:url' content='https://gzg-ke.github.io/always.hpy.bolg/post/'>
 <meta property='og:site_name' content='AlwaysHpy'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2024-12-26T18:19:22&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2024-12-27T13:11:07&#43;08:00 '/>
 <meta name="twitter:title" content="Posts">
 <meta name="twitter:description" content="要开心哟"><link rel="alternate" type="application/rss&#43;xml" href="https://gzg-ke.github.io/always.hpy.bolg/post/index.xml">
     </head>
@@ -19,7 +19,7 @@
         (function() {
             const colorSchemeKey = 'StackColorScheme';
             if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "auto");
+                localStorage.setItem(colorSchemeKey, "dark");
             }
         })();
     </script><script>
@@ -505,5 +505,110 @@
     }());
 </script>
 
+ 
+...
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<script src=https://gzg-ke.github.io/always.hpy.bolg/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "json/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+<script>
+	var pjax = new Pjax({
+	  selectors: [
+	    ".main-container"
+	  ]
+	})
+</script>
+<meting-js
+	server="netease"
+	type="playlist"
+	fixed="true"
+	order="random"
+    volume=[0.5]
+    loop="all"
+	id="623916260">
+</meting-js>
+
+
+...
+<script>
+    
+
+    window.onbeforeunload = () => {
+        
+        const playInfo = {
+            index: ap.list.index,
+            currentTime: ap.audio.currentTime,
+            paused: ap.paused
+        };
+        localStorage.setItem("playInfo", JSON.stringify(playInfo));
+    };
+
+    
+
+    window.onload = () => {
+        
+        const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+        if (!playInfo) {
+            return;
+        }
+        
+        ap.list.switch(playInfo.index);
+        
+        setTimeout(() => {
+            
+            ap.seek(playInfo.currentTime);
+            
+            if (!playInfo.paused) {
+                ap.play()
+            }
+        }, 500);
+    };
+</script>
+
+
+...
+
+<script>
+    
+    topbar.config({
+        barColors: {
+            '0': 'rgba(255,  255, 255, 1)', 
+            '1.0': 'rgba(0, 149, 234,  1)' 
+        }
+    })
+	
+    document.addEventListener('pjax:send', () => {
+        
+        topbar.show();
+    })
+	
+    document.addEventListener('pjax:complete', () => {
+        
+        topbar.hide();
+    })
+</script>
+
+
+<div id="particles-js"></div>
+<style>
+
+    #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+  
     </body>
 </html>

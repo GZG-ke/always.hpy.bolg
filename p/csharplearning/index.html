@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://gzg-ke.github.io/always.hpy.bolg/p/csharplearning/'>
 
-<link rel="stylesheet" href="/always.hpy.bolg/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="CSharpLearning">
+<link rel="stylesheet" href="/always.hpy.bolg/scss/style.min.da10c01e1d8b618195594efc58dabd810eef71ec1463db97e171d682eda240d0.css"><meta property='og:title' content="CSharpLearning">
 <meta property='og:description' content="IOC 基础知识 我们如何理解IOC？我们可以通过一个现实世界的模型来进行解释。比如有一本菜谱这个菜谱就是我们的IServiceCollection，里面记录了菜（Service）的描述信息（ServiceDescriptor）菜名（ServiceDescriptor.ServiceType）以及菜具体制作方法（ServiceDescriptor.ImplementationType），通过菜名（ServiceType）告诉厨师（IServiceProvider）制作（实列化、解析）出来我们要吃的菜。这就是IOC技术。\n">
 <meta property='og:url' content='https://gzg-ke.github.io/always.hpy.bolg/p/csharplearning/'>
 <meta property='og:site_name' content='AlwaysHpy'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-26T18:19:22&#43;08:00'/><meta property='article:modified_time' content='2024-12-26T18:19:22&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-26T18:19:22&#43;08:00'/><meta property='article:modified_time' content='2024-12-27T13:11:07&#43;08:00'/>
 <meta name="twitter:title" content="CSharpLearning">
 <meta name="twitter:description" content="IOC 基础知识 我们如何理解IOC？我们可以通过一个现实世界的模型来进行解释。比如有一本菜谱这个菜谱就是我们的IServiceCollection，里面记录了菜（Service）的描述信息（ServiceDescriptor）菜名（ServiceDescriptor.ServiceType）以及菜具体制作方法（ServiceDescriptor.ImplementationType），通过菜名（ServiceType）告诉厨师（IServiceProvider）制作（实列化、解析）出来我们要吃的菜。这就是IOC技术。\n">
     </head>
@@ -21,7 +21,7 @@
         (function() {
             const colorSchemeKey = 'StackColorScheme';
             if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "auto");
+                localStorage.setItem(colorSchemeKey, "dark");
             }
         })();
     </script><script>
@@ -1948,7 +1948,19 @@ Service：就是我们需要的服务实列（菜）</p>
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    </footer>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Dec 27, 2024 13:11 &#43;0800
+        </span>
+    </section></footer>
 
 
     
@@ -2116,5 +2128,110 @@ Service：就是我们需要的服务实列（菜）</p>
     }());
 </script>
 
+ 
+...
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<script src=https://gzg-ke.github.io/always.hpy.bolg/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "json/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+<script>
+	var pjax = new Pjax({
+	  selectors: [
+	    ".main-container"
+	  ]
+	})
+</script>
+<meting-js
+	server="netease"
+	type="playlist"
+	fixed="true"
+	order="random"
+    volume=[0.5]
+    loop="all"
+	id="623916260">
+</meting-js>
+
+
+...
+<script>
+    
+
+    window.onbeforeunload = () => {
+        
+        const playInfo = {
+            index: ap.list.index,
+            currentTime: ap.audio.currentTime,
+            paused: ap.paused
+        };
+        localStorage.setItem("playInfo", JSON.stringify(playInfo));
+    };
+
+    
+
+    window.onload = () => {
+        
+        const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+        if (!playInfo) {
+            return;
+        }
+        
+        ap.list.switch(playInfo.index);
+        
+        setTimeout(() => {
+            
+            ap.seek(playInfo.currentTime);
+            
+            if (!playInfo.paused) {
+                ap.play()
+            }
+        }, 500);
+    };
+</script>
+
+
+...
+
+<script>
+    
+    topbar.config({
+        barColors: {
+            '0': 'rgba(255,  255, 255, 1)', 
+            '1.0': 'rgba(0, 149, 234,  1)' 
+        }
+    })
+	
+    document.addEventListener('pjax:send', () => {
+        
+        topbar.show();
+    })
+	
+    document.addEventListener('pjax:complete', () => {
+        
+        topbar.hide();
+    })
+</script>
+
+
+<div id="particles-js"></div>
+<style>
+
+    #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+  
     </body>
 </html>
